@@ -1,4 +1,5 @@
 import { Component } from "react";
+import {Button, InputGroup, FormControl} from "react-bootstrap"
 
 class TecladoForm extends Component {
 
@@ -33,14 +34,16 @@ class TecladoForm extends Component {
         return(
             <section className = "main">
             <form onSubmit = {this.handlerSalvar.bind(this)}>
-                <label>Id: </label>
-                <input 
+                <InputGroup className="mb-3"
                     type="number"
                     name="id" 
                     id="id" 
                     placeholder="Digite o id"
                     onChange = {this.handlerInputId.bind(this)}
-                />
+                >
+                <InputGroup.Text>ID</InputGroup.Text>
+                <FormControl aria-label="Id" />
+                </InputGroup>
                 <br />
                 <label>Switch: </label>
                 <input 
@@ -63,7 +66,8 @@ class TecladoForm extends Component {
                    )}
                 </select>
                 <br />
-                <input type="submit" value="Salvar" />
+                <Button type="submit" variant="success">Salvar</Button>
+                {/* <input type="submit" value="Salvar" class = "btn"/> */}
             </form>
             </section>
         )
